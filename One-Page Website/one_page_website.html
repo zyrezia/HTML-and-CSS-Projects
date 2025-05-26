@@ -3,22 +3,8 @@
 	<head>
 		<title> One-Page </title>
 		<meta charset="utf-8">
-		<style>
-			body { 
-				background-color: pink;
-			}
-			
-			h1 {
-				color: red;
-				text-align: center;
-				text-shadow: 2px 2px 5px blue;
-			}
-			
-			p {
-				text-color: purple;
-				font-style: italic;
-			}
-		</style>
+		<link rel="stylesheet" href="CSS.css">
+		<script src="JS.js"></script>
 	</head>
 	<body> 
 		<h1 id="Home"> One-Page </h1>
@@ -33,10 +19,74 @@
 		</nav>
 		
 		<h2 id="Images"> Images </h2>
-		<img src="pitbull.png" alt="Pitbull Photo"> <br>
-		<img src="batman.png" alt="Batman Photo"> <br>
-		<img src="lakers showtime.png" alt="Los Angeles Lakers Showtime Photo"> <br>
-		<img src="lakers shaq and kobe.png" alt="Los Angeles Lakers Shaq and Kobe Photo"> <br>
+		<!-- Images used to open the lightbox -->
+		<div class="row">
+		  <div class="column">
+			<img src="pitbull.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="batman.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="lakers showtime.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="lakers shaq and kobe.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow">
+		  </div>
+		</div>
+
+		<!-- The Modal/Lightbox -->
+		<div id="myModal" class="modal">
+		  <span class="close cursor" onclick="closeModal()">&times;</span>
+		  <div class="modal-content">
+
+			<div class="mySlides">
+			  <div class="numbertext">1 / 4</div>
+			  <img src="pitbull_wide.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">2 / 4</div>
+			  <img src="batman_wide.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">3 / 4</div>
+			  <img src="lakers showtime_wide.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">4 / 4</div>
+			  <img src="lakers shaq and kobe_wide.png" style="width:100%">
+			</div>
+
+			<!-- Next/previous controls -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<!-- Caption text -->
+			<div class="caption-container">
+			  <p id="caption"></p>
+			</div>
+
+			<!-- Thumbnail image controls -->
+			<div class="column">
+			  <img class="demo" src="pitbull.png" style="width:100%" onclick="currentSlide(1)" alt="Pitbull Photo">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="batman.png" style="width:100%" onclick="currentSlide(2)" alt="Batman Photo">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="lakers showtime.png" style="width:100%" onclick="currentSlide(3)" alt="Los Angeles Lakers Showtime Photo">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="lakers shaq and kobe.png" style="width:100%" onclick="currentSlide(4)" alt="Los Angeles Lakers Shaq and Kobe Photo">
+			</div>
+		  </div>
+		</div>
 		
 		<br>
 		<nav>
